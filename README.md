@@ -1,9 +1,14 @@
+# Intro
 This is an assignment of our Natural Language Processing Course.
 It can identify the language of a given text using a series of trained language models.
 In this a assignment, we first build a series of character language models based on a series of text files in different languages in the training set. Then we identify the language of each text file in the development set and test set.
 
+<br/>
+
 # Team Members
 [ 'Shufan(Atom) Cai', 'Dinghao(Kevin) Liu']
+
+<br/>
 
 # How to Run the Program
 
@@ -11,19 +16,19 @@ In this a assignment, we first build a series of character language models based
 
 python langid.py --SMOOTHING_TYPE --TEST_OBJ
 
-### Available Command Line Arguments:
+### Available Command Line Arguments
 
 --SMOOTHING_TYPE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Indicate which smoothing type to use, which has four options:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--unsmoothed<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--laplace<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--nltk-kneser-ney&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Use NLTK's original Kneser-Ney smoothing functions<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--improved-kneser-ney&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Use the improved Kneser-Ney smoothing function implemented by ourself, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--unsmoothed<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--laplace<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--nltk-kneser-ney&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Use NLTK's original Kneser-Ney smoothing functions<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--improved-kneser-ney&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Use the improved Kneser-Ney smoothing function implemented by ourself, 
 							which is based on the principle in our tutorial's chapter 4
 							and can solve the problem of assigning zero probabilities to unseen ngrams.   
 
---TEST_OBJ		Indicate which data set to use for the test, which has two options:
-			--dev	# Test the development set of files
-			--tes	# Test the test set of files
+--TEST_OBJ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Indicate which data set to use for the test, which has two options:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--dev&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Test the development set of files<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--tes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Test the test set of files
 
 ### Program Usage Examples
 
@@ -32,23 +37,24 @@ python langid.py --laplace --tes		# Test the test set using Laplace smoothing
 python langid.py --nltk-kneser-ney --tes	# Test the test set using NLTK's original Kneser-Ney smoothing functions
 python langid.py --improved-kneser-ney --dev	# Test the dev set using our self-implemented improved Kneser-Ney smoothing function
 
+<br/>
 
 # About Tunning Parameter n
 
 ### The Result of Tunning Parameter n
 
-Unsmoothed Model
-{
-	The Tuned Parameter n: 2
-	Max Match Rate: 5 / 55
-	Best Match Average Perplexity: 6.76094554588
+Unsmoothed Model<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Tuned Parameter n: 2<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Max Match Rate: 5 / 55<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Best Match Average Perplexity: 6.76094554588<br/>
 }
 
-Laplace Smoothing Model
-{
-	The Tuned n Value: 3
-	Max Match Rate: 54 / 55
-	Best Match Average Perplexity: 9.06971102989
+Laplace Smoothing Model<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Tuned n Value: 3<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Max Match Rate: 54 / 55<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Best Match Average Perplexity: 9.06971102989<br/>
 }
 
 ### How We Tuned Parameter n
@@ -67,6 +73,7 @@ The program can help us find the best n values automatically.
 To let the program do so you just need to run the program with the --SMOOTHING_TYPE cmd line argument as --unsmoothed or --laplace, and the --TEST_OBJ cmd line argument as "dev".
 Once running, the program allows you to input the min and max values of n which indicate the range of n value when finding the optimum n value.
 
+<br/>
 
 # P.S.
 
